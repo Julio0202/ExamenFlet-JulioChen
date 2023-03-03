@@ -4,11 +4,14 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "Examen Flet"
     #Ejercicio 6
-    alerta = ft.AlertDialog(title=ft.Text("El usuario y contraseña es igual"))
+    alerta = ft.AlertDialog(title=ft.Text("El usuario y la contraseña son iguales"))
+    alerta2 = ft.AlertDialog(title=ft.Text("El usuario y la contraseña no son iguales"))
     def aviso_usuario_contra(e):
         if tfnombre.value == tfpassword.value:
             alerta.open = True
-            page.update()
+        else:
+            alerta2.open= True
+        page.update()
     #Fin --- Ejercicio 6
 
 
@@ -37,7 +40,7 @@ def main(page: ft.Page):
     #Ejercicio 5
     btnEntrar = ft.ElevatedButton(text="Boton",icon="chair_outlined",on_click=aviso_usuario_contra)
     #Fin-- Ejercicio 5
-    page.add(img,tfnombre,tfpassword,btnEntrar,alerta)
+    page.add(img,tfnombre,tfpassword,btnEntrar,alerta,alerta2)
 
 
 
